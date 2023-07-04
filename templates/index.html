@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% assets "index_css" %}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+{% endassets %}
+{% endblock %}
+
+{% block body %}
+<div id="carousel-login">
+    <div class="row">
+        <div id="carousel">
+            <div id="buttons">
+                {% for i in range(5) %}
+                <button class="{% if i == 0 %}active{% endif %}"></button>
+                {% endfor %}
+            </div>
+        </div>
+        {% if not loggedinuser %}
+        <div id='login'>
+            <div id='login__header'>
+                Login or Register
+            </div>
+            <form action='/' method='POST'>
+                <div id='login__inputs'>
+                    <span>Username</span>
+                    <input class='login__input' type='text' name='username'>
+                    <span>Password</span>
+                    <input class='login__input' type='password' name='password'>
+                </div>
+                <br>
+                <div class='row'>
+                    <input id='login-button' type='submit' value='LOGIN' name='submit'>
+                </div>
+            </form>
+            <div id="login-options">
+                <div id='login__reset-password'>
+                    Forgot your password?
+                </div>
+                <div id='login__register-link'>
+                    <a href='/register'>Register</a>
+                </div>
+                <div id='login__terms'>
+                    Terms and Conditions
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="row-h">
+    <div id="main">
+        <div id="offers-and-tweets">
+            <div id="offers">
+                {% for i in range(2) %}
+                <div class='offer' id="offer-{{ i + 1 }}"></div>
+                {% endfor %}
+            </div>
+            <div id="twiter">
+
+            </div>
+        </div>
+        <div id="options">
+            <div id="titles">
+                {% for title in ['Our Products', 'Open an Account', 'Get Started', 'Contact'] %}
+                <div class="title">{{ title }}</div>
+                {% endfor %}
+            </div>
+            <div id="links-info">
+                <div id="links">
+                    {% for i in range(3) %}
+                    <div class="link-img" id="link-{{ i + 1 }}"></div>
+                    {% endfor %}
+                </div>
+                <div id="contact">
+                    <div class="contact__item">
+                        South Africa <br>
+                        0860 121 161
+                    </div>
+                    <div class="contact__item">
+                        International <br>
+                        +27 11 415 5000
+                    </div>
+                    <div class="contact__item">
+                        Email <br>
+                        Send us an <span>email</span>
+                    </div>
+                    <div class="contact__item">
+                        Call centre hours <br>
+                        08:30 - 19:30 <br>
+                        Monday - Friday
+                    </div>
+                    <div class="contact__item">
+                        Provide feedback <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

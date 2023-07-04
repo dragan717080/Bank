@@ -1,0 +1,195 @@
+@import '../scss/includes';
+
+body {
+
+    #header {
+        height: 30px;
+        text-align: center;
+        font-size: 14px;
+        border-bottom: 3px solid $aqua;
+    }
+
+    #carousel-login {
+        width: 100vw;
+        @include padding-y(40px, 40px);
+        background: $gray-300;
+
+        #carousel {
+            height: 24vh;
+            width: 25vw;
+            margin-right: 24px;
+            @include bg-no-repeat('../../assets/images/img-6.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            #buttons {
+                @include row-v;
+                justify-content: space-between;
+                overflow-x: auto;
+                margin: 0 14px 7px;
+
+                button {
+                    @include square(34px);
+                    border-radius: 50%;
+                    flex: 0 0 34px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #login {
+            height: 24vh;
+            width: 190px;
+            background: #fff;
+            border: 1px solid $lightblue-1;
+
+            #login__header {
+                height: 34px;
+                padding-top: 12px;
+                font-size: 18px;
+                color: #26428b;
+                line-height: 18px;
+                text-align: center;
+                border-bottom: 1px solid $darkblue;
+            }
+
+            #login__inputs {
+                margin: 14px;
+                font-size: 13px;
+                line-height: 1.42857143;
+
+                input {
+                    width: 140px;
+                }
+            }
+
+            #login-options {
+                margin: map-get($sizing, 'w-14');
+                font-size: map-get($sizing, 'w-13');
+                line-height: 1.42857143;
+
+                div {
+                    margin-bottom: map-get($sizing, 'w-12');
+                }
+
+                #login__register-link {
+                    margin-top: -7px;
+                    color: $lightblue-1;
+                }
+
+                #login__terms {
+                    margin-top: -7px;
+                    line-height: 1.42857143;
+                }
+            }
+
+            #login-button {
+                background-color: $lightblue-1;
+                color: $white;
+                padding-inline: map-get($sizing, 'w-9');
+            }
+
+            a {
+                @include lb-link;
+            }
+        }
+    }
+
+    #main {
+        padding-top: 2rem;
+        width: 62%;
+
+        #offers-and-tweets {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+
+            #offers {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+
+                .offer {
+                    height: 12.5rem;
+
+                }
+
+                #offer-1 {
+                    margin-inline: 12px;
+                    @include bg-no-repeat('../../assets/images/img-6.jpg');
+                    background-size: cover;
+                }
+
+                #offer-2 {
+                    @include bg-no-repeat('../../assets/images/img-7.jpg');
+                    background-size: cover;
+                    margin-inline: 12px;
+                }
+            }
+
+            #twitter {}
+
+            #tweets {}
+        }
+
+        #options {
+            padding-bottom: 40px;
+
+            #titles {
+                @include grid(4);
+
+                .title {
+                    margin: 18px 12px;
+                    padding-bottom: 3px;
+                    border-bottom: 1px solid $darkblue;
+                }
+            }
+
+            #links-info {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+
+                #links {
+                    @include grid(3);
+
+                    .link-img {
+                        height: 29rem;
+                        margin-inline: 12px;
+                        background-size: cover !important;
+                    }
+
+                    #link-1 {
+                        @include bg-no-repeat('../../assets/images/img-8.jpg');
+                    }
+
+                    #link-2 {
+                        @include bg-no-repeat('../../assets/images/img-9.jpeg');
+                    }
+
+                    #link-3 {
+                        @include bg-no-repeat('../../assets/images/img-10.jpg');
+                    }
+                }
+
+                #contact {
+                    font-size: 13px;
+
+                    .contact__item {
+                        margin-inline: 12px;
+                        padding: 15px 44px;
+                        background-color: $gray-150;
+                        color: $gray-700;
+                        border-bottom: 2px solid $white;
+                        line-height: 1.5;
+
+                        span {
+                            color: $lightblue-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px) {}

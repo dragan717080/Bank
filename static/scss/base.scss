@@ -1,0 +1,129 @@
+@import 'includes';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-h {
+  display: flex;
+  justify-content: center;
+}
+
+.row-v {
+  display: flex;
+  align-items: center;
+}
+
+.input__wrapper {
+  height: 33px;
+  border: 2px solid #555;
+  border-radius: 10px;
+  margin-bottom: 17px;
+  padding-left: 15px;
+  display: flex;
+
+  img {
+    @include square(23px);
+    margin-left: 7px;
+    padding-top: 4px;
+  }
+
+  input, 
+  input:focus {
+    width: 199px;
+    padding-left: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+  }
+}
+
+.submit-btn {
+  @include rect(40px, 260px);
+  margin: 4px 0 19px 22px;
+  background-color: #000;
+  color: $lightblue-1;
+  border: 2px solid $lightblue-1;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 20px;
+  text-shadow: 0 0 15px #ff8300;
+  padding: 9px 16px 7px;
+  line-height: 20px;
+  min-height: auto;
+  min-width: 150px;
+  max-width: 260px;
+  text-align: center;
+  font-family: Spartan;
+  letter-spacing: .8px;
+  cursor: pointer;
+  transition: .25s;
+  font-family: 'Spartan', sans-serif;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: $lightblue-1;
+  color: #000;
+  border: 2px solid #000;
+}
+
+#overview-news {
+  height: map-get($sizing, 'w-24');
+  padding-top: map-get($sizing, 'w-4');
+  background-color: $red;
+  color: $white;
+  text-align: center;
+  font-family: Arial;
+}
+
+#logo {
+  @include rect(100px, 100vw);
+  @include bg-no-repeat('../../assets/images/header.jpg');
+  @include row;
+
+  img {
+      height: 70px;
+  }
+}
+
+.active {
+  background: $lightblue-1;
+}
+
+#footer {
+  @include bg-no-repeat('../../assets/images/header.jpg');
+  @include row;
+  min-height: 120px;
+  color: #fff;
+  background-size: cover;
+
+  .footer-menu {
+  
+    .footer-menu__row {
+      @include margin-y(4px, 12px);
+      @include row-h;
+  
+      .footer-menu__row__item {
+        margin-inline: 10px;
+      }
+  
+      span {
+        color: $yellow-1;
+        margin-inline: 4px;
+      }
+    }
+  }
+}
+

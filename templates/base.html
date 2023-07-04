@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+{% assets "base_css" %}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+{% endassets %}
+
+<head>
+    <meta charset='UTF-8'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link rel='logo.png' sizes='76x76' href="{{ url_for('static', filename='assets/icons/logo.png') }}">
+    <link rel='shortcut icon' href="{{ url_for('static', filename='/assets/icons/logo.png') }}" type='image/x-icon'>
+    <link href='https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap' rel='stylesheet'>
+
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+    <div id="overview-news">
+        Top ranked bank South Africa
+    </div>
+    <div id="logo">
+        <img src="{{ url_for('static', filename='assets/images/bank-logo.png') }}" />
+    </div>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <div id="footer">
+        <div class = 'footer-menu'>
+            <div class = 'footer-menu__row'>
+                Copyright © 2023 <span>Standard Bank</span> All rights reserved.
+            </div>
+            <div class = 'footer-menu__row'>
+                <div class = 'footer-menu__row__item'>
+                    Política de frete
+                </div>
+                <div class = 'footer-menu__row__item'>
+                    Política de compras
+                </div>
+                <div class = 'footer-menu__row__item'>
+                    Política de devolução
+                </div>
+                <div class = 'footer-menu__row__item'>
+                    Política de privacidade
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
