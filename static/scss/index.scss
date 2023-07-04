@@ -9,90 +9,93 @@ body {
         border-bottom: 3px solid $aqua;
     }
 
-    #carousel-login {
+    #carousel-login__wrapper {
         width: 100vw;
-        @include padding-y(40px, 40px);
         background: $gray-300;
+        @include row;
 
-        #carousel {
-            height: 24vh;
-            width: 25vw;
-            margin-right: 24px;
-            @include bg-no-repeat('../../assets/images/img-6.jpg');
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+        #carousel-login {
+            width: 62vw;
+            @include padding-y(40px, 40px);
 
-            #buttons {
-                @include row-v;
-                justify-content: space-between;
-                overflow-x: auto;
-                margin: 0 14px 7px;
+            #carousel {
+                height: 18rem;
+                width: 37vw;
+                margin-right: 24px;
+                @include bg-no-repeat('../../assets/images/img-6.jpg', 1, 1);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
 
-                button {
-                    @include square(34px);
-                    border-radius: 50%;
-                    flex: 0 0 34px;
-                    cursor: pointer;
-                }
-            }
-        }
+                #buttons {
+                    @include row-v;
+                    justify-content: space-between;
+                    overflow-x: auto;
+                    margin: 0 14px 7px;
 
-        #login {
-            height: 24vh;
-            width: 190px;
-            background: #fff;
-            border: 1px solid $lightblue-1;
-
-            #login__header {
-                height: 34px;
-                padding-top: 12px;
-                font-size: 18px;
-                color: #26428b;
-                line-height: 18px;
-                text-align: center;
-                border-bottom: 1px solid $darkblue;
-            }
-
-            #login__inputs {
-                margin: 14px;
-                font-size: 13px;
-                line-height: 1.42857143;
-
-                input {
-                    width: 140px;
+                    button {
+                        @include square(34px);
+                        border-radius: 50%;
+                        flex: 0 0 34px;
+                        cursor: pointer;
+                    }
                 }
             }
 
-            #login-options {
-                margin: map-get($sizing, 'w-14');
-                font-size: map-get($sizing, 'w-13');
-                line-height: 1.42857143;
+            #login {
+                width: 190px;
+                background: $white;
+                border: 1px solid $lightblue-1;
 
-                div {
-                    margin-bottom: map-get($sizing, 'w-12');
+                #login__header {
+                    height: 34px;
+                    padding-top: 12px;
+                    font-size: 18px;
+                    color: $darkblue;
+                    line-height: 18px;
+                    text-align: center;
+                    border-bottom: 1px solid $darkblue;
                 }
 
-                #login__register-link {
-                    margin-top: -7px;
-                    color: $lightblue-1;
-                }
-
-                #login__terms {
-                    margin-top: -7px;
+                #login__inputs {
+                    margin: 14px;
+                    font-size: 13px;
                     line-height: 1.42857143;
+
+                    input {
+                        width: 140px;
+                    }
                 }
-            }
 
-            #login-button {
-                background-color: $lightblue-1;
-                color: $white;
-                padding-inline: map-get($sizing, 'w-9');
-            }
+                #login-options {
+                    margin: map-get($sizing, 'w-14');
+                    font-size: map-get($sizing, 'w-13');
+                    line-height: 1.42857143;
 
-            a {
-                @include lb-link;
+                    div {
+                        margin-bottom: map-get($sizing, 'w-12');
+                    }
+
+                    #login__register-link {
+                        margin-top: -7px;
+                        color: $lightblue-1;
+                    }
+
+                    #login__terms {
+                        margin-top: -7px;
+                        line-height: 1.42857143;
+                    }
+                }
+
+                #login-button {
+                    background-color: $lightblue-1;
+                    color: $white;
+                    padding-inline: map-get($sizing, 'w-9');
+                }
+
+                a {
+                    @include lb-link;
+                }
             }
         }
     }
@@ -111,18 +114,15 @@ body {
 
                 .offer {
                     height: 12.5rem;
-
                 }
 
                 #offer-1 {
                     margin-inline: 12px;
-                    @include bg-no-repeat('../../assets/images/img-6.jpg');
-                    background-size: cover;
+                    @include bg-no-repeat('../../assets/images/img-6.jpg', 1, 1);
                 }
 
                 #offer-2 {
-                    @include bg-no-repeat('../../assets/images/img-7.jpg');
-                    background-size: cover;
+                    @include bg-no-repeat('../../assets/images/img-7.jpg', 1, 1);
                     margin-inline: 12px;
                 }
             }
@@ -142,6 +142,8 @@ body {
                     margin: 18px 12px;
                     padding-bottom: 3px;
                     border-bottom: 1px solid $darkblue;
+                    display: flex;
+                    flex-flow: column-reverse;
                 }
             }
 
@@ -154,6 +156,7 @@ body {
 
                     .link-img {
                         height: 29rem;
+                        width: 13.9vw;
                         margin-inline: 12px;
                         background-size: cover !important;
                     }
@@ -192,4 +195,100 @@ body {
     }
 }
 
-@media only screen and (min-width: 1500px) {}
+@media only screen and (max-width: 700px) {
+    body {
+        #logo {
+            img {
+                width: 90%;
+                margin-inline: 1rem;
+            }
+        }
+        #carousel-login__wrapper {
+            #carousel-login {
+                #carousel {
+                    height: 20.4rem;
+                    min-width: 56vw;
+                    margin-right: 0;
+                    background-position-x: -190px;
+                }
+                #login {
+                    margin-left: 10px;
+
+                    #login__header {
+                        @include padding-y(7px);
+                    }
+            
+                    #login__inputs {
+                        margin: 14px;
+                        
+                        input {
+                            width: 100px;
+                        }
+                    }
+                    
+                    #login-options {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        #main {
+            width: -webkit-fill-available;
+
+            #offers-and-tweets {
+                display: flex;
+
+                #offers {
+                    width: 57vw;
+                    
+                    #offer-2 {
+                        margin-inline: 0;
+                    }
+                }
+                #twitter {
+                    width: 37vw;
+                    margin-inline: 7px;
+
+                    .twitter-timeline {
+                        width: auto !important;
+
+                        iframe {
+                            width: -webkit-fill-available !important;
+                        }
+                    }
+                }
+            }
+
+            #options {
+                #titles {
+                    display: none;
+                }
+                #links-info {
+                    margin-top: 14px;
+                    display: flex;
+
+                    #links {
+                        grid-template-columns: none;
+                        grid-row-gap: 10px;
+                
+                        .link-img {
+                            height: 12rem;
+                            width: 62vw;
+                            background-size: cover !important;
+                            margin-right: 0;
+                        }
+                    }
+
+                    #contact {
+                        margin-inline: 7px;
+
+                        .contact__item {
+                            margin-inline: 0;
+                            padding: 15px 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

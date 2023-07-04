@@ -7,47 +7,50 @@
 {% endblock %}
 
 {% block body %}
-<div id="carousel-login">
-    <div class="row">
-        <div id="carousel">
-            <div id="buttons">
-                {% for i in range(5) %}
-                <button class="{% if i == 0 %}active{% endif %}"></button>
-                {% endfor %}
+
+<section id="carousel-login__wrapper">
+    <div id="carousel-login">
+        <div class="row">
+            <div id="carousel">
+                <div id="buttons">
+                    {% for i in range(5) %}
+                    <button class="{% if i == 0 %}active{% endif %}"></button>
+                    {% endfor %}
+                </div>
             </div>
+            {% if not loggedinuser %}
+            <div id='login'>
+                <div id='login__header'>
+                    Login or Register
+                </div>
+                <form action='/' method='POST'>
+                    <div id='login__inputs'>
+                        <span>Username</span>
+                        <input class='login__input' type='text' name='username'>
+                        <span>Password</span>
+                        <input class='login__input' type='password' name='password'>
+                    </div>
+                    <br>
+                    <div class='row'>
+                        <input id='login-button' type='submit' value='LOGIN' name='submit'>
+                    </div>
+                </form>
+                <div id="login-options">
+                    <div id='login__reset-password'>
+                        Forgot your password?
+                    </div>
+                    <div id='login__register-link'>
+                        <a href='/register'>Register</a>
+                    </div>
+                    <div id='login__terms'>
+                        Terms and Conditions
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
-        {% if not loggedinuser %}
-        <div id='login'>
-            <div id='login__header'>
-                Login or Register
-            </div>
-            <form action='/' method='POST'>
-                <div id='login__inputs'>
-                    <span>Username</span>
-                    <input class='login__input' type='text' name='username'>
-                    <span>Password</span>
-                    <input class='login__input' type='password' name='password'>
-                </div>
-                <br>
-                <div class='row'>
-                    <input id='login-button' type='submit' value='LOGIN' name='submit'>
-                </div>
-            </form>
-            <div id="login-options">
-                <div id='login__reset-password'>
-                    Forgot your password?
-                </div>
-                <div id='login__register-link'>
-                    <a href='/register'>Register</a>
-                </div>
-                <div id='login__terms'>
-                    Terms and Conditions
-                </div>
-            </div>
-        </div>
-        {% endif %}
     </div>
-</div>
+</section>
 <div class="row-h">
     <div id="main">
         <div id="offers-and-tweets">
@@ -56,8 +59,10 @@
                 <div class='offer' id="offer-{{ i + 1 }}"></div>
                 {% endfor %}
             </div>
-            <div id="twiter">
-
+            <div id="twitter">
+                <a class="twitter-timeline" data-width="297" data-height="204"
+                    href="https://twitter.com/standardbankza">Twitter</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
         <div id="options">

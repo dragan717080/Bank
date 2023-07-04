@@ -54,9 +54,13 @@
     margin-bottom: $value-v;
 }
 
-@mixin padding-y($value-h, $value-v) {
+@mixin padding-y($value-h, $value-v: null) {
     padding-top: $value-h;
-    padding-bottom: $value-v;
+    @if $value-v {
+        padding-bottom: $value-v;
+    } @else {
+        padding-bottom: $value-h;
+    }
 }
 
 @mixin grid($ncol) {
@@ -64,7 +68,22 @@
     grid-template-columns: repeat($ncol, 1fr);
 }
 
-@mixin bg-no-repeat($url) {
+@mixin bg-no-repeat($url, $cover: null, $center: null) {
     background: url($url);
     background-repeat: no-repeat;
+    @if $cover {
+        background-size: cover;
+    }
+    @if $center {
+        background-position: center;
+    }
+}
+
+@mixin bg-position($x, $y: null) {
+    background-position-x: $x;
+    @if $y {
+        background-position-y: $y;
+    } @else {
+        background-position-y: $x;
+    }
 }
